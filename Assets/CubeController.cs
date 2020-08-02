@@ -31,15 +31,9 @@ public class CubeController : MonoBehaviour {
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-
-		if (collision.gameObject.name == "ground")
-		{
-			audioSource.volume = 1;
-		}
-		if (collision.gameObject.name == "CubePrefab(Clone)")
+		if (collision.gameObject.tag != "UnityChan")
         {
-			audioSource.volume = 0.5f;
+            audioSource.Play();
 		}
-		audioSource.Play();
 	}
 }
